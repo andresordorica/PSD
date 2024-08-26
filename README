@@ -1,1 +1,10 @@
+This code is designed to determine the Pore Size Distribution (PSD) within a simulation cell, applicable to any type of porous or amorphous materials. The implementation follows the Grid Point Approach and Cavity Method:
 
+Trepte K, Schwalbe S. porE: A code for deterministic and systematic analyses of porosities. J Comput Chem. 2021; 42: 630–643. https://doi.org/10.1002/jcc.26484
+
+In the provided example.ipynb, a random distribution of points is generated, simulating a series of atoms within a simulation box. To use actual coordinate data from a GROMACS .gro file, a helper function is included in this repository.
+
+To use an actual .gro file, replace the random data with the following:
+file_path = os.getcwd()  # Path where the .gro file is located
+gro_file_path = os.path.join(file_path, "NPT.gro")  # Name of the .gro file
+data, box_dimensions = transcribe_gro_radius(gro_file_path)  # The function returns the data in array format and the box dimensions
